@@ -116,12 +116,11 @@
       if (pr.github) links.push(`<a href="${pr.github}" target="_blank" rel="noopener">${esc(pr.github)}</a>`);
       if (pr.site) links.push(`<a href="${pr.site}" target="_blank" rel="noopener">${esc(pr.site)}</a>`);
       return `
-        <article class="proj-item">
-          <h3><a href="#/projects/${pr.id}">${esc(pr.title)} (${esc(pr.period)})</a></h3>
+        <article class="proj-item" data-id="${esc(pr.id)}" tabindex="0" role="link" aria-label="${esc(pr.title)} 상세 보기">
+          <h3>${esc(pr.title)} (${esc(pr.period)})</h3>
           <p class="desc">${esc(pr.summary)}</p>
           <p class="team">인원: ${esc(pr.team)}</p>
           <div class="links">${links.join('')}</div>
-          <a class="more" href="#/projects/${pr.id}">자세히 보기 →</a>
         </article>`;
     }).join('');
 
@@ -165,6 +164,22 @@
         <div class="wrap"><h2 class="sec-title">Project Details</h2></div>
         <div id="slide"></div>
       </section>`;
+
+    // 프로젝트 요약 카드 전체 클릭(또는 Enter/Space): 상세로 이동. 카드 안의 외부 링크는 그대로 동작
+    const list = app.querySelector('.proj-list');
+    const openItem = (item) => route('#/projects/' + item.dataset.id);
+    list.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      const item = e.target.closest('.proj-item');
+      if (item) openItem(item);
+    });
+    list.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const item = e.target.closest('.proj-item');
+      if (!item || e.target !== item) return;
+      e.preventDefault();
+      openItem(item);
+    });
 
     // 화살표(밴드/하단) 클릭: 이벤트 위임
     document.getElementById('slide').addEventListener('click', (e) => {

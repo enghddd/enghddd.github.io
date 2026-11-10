@@ -75,14 +75,17 @@ img { display: block; max-width: 100%; height: auto; }
 .home-cols { display: grid; grid-template-columns: 1.5fr 1fr; gap: 56px; padding-top: 36px; }
 .home-cols > * { min-width: 0; }
 
-.proj-list { display: grid; gap: 26px; }
+.proj-list { display: grid; gap: 12px; }
+.proj-item { padding: 14px 16px; margin: 0 -16px; border-radius: 6px; cursor: pointer; transition: background-color .15s ease; }
+.proj-item:hover, .proj-item:focus-visible { background: rgba(0, 0, 0, .05); }
+/* 링크 위에 있을 때는 카드 음영을 끄고 링크에만 음영 */
+.proj-item:has(.links a:hover) { background: transparent; }
+.proj-item:focus-visible { outline: 2px solid var(--heading, #333); outline-offset: -2px; }
 .proj-item h3 { font-size: 16px; font-weight: 700; }
-.proj-item h3 a:hover { text-decoration: underline; }
 .proj-item .desc, .proj-item .team { font-size: 14px; font-weight: 300; }
 .proj-item .links { font-size: 13px; font-weight: 300; display: flex; gap: 16px; flex-wrap: wrap; margin-top: 2px; }
-.proj-item .links a { color: #444; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; }
-.proj-item .more { display: inline-block; margin-top: 4px; font-size: 13px; font-weight: 500; color: var(--heading); }
-.proj-item .more:hover { color: var(--text); }
+.proj-item .links a { color: #444; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; border-radius: 3px; }
+.proj-item .links a:hover { background: rgba(0, 0, 0, .1); }
 
 .skill-group { margin-bottom: 22px; }
 .skill-group h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }

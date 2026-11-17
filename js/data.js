@@ -3,7 +3,7 @@ const PROFILE = {
   name: '정두홍',
   role: 'BACKEND DEVELOPER',
   email: 'enghddd@naver.com',
-  github: 'https://github.com/jung18',
+  github: 'https://github.com/enghddd',
   photo: 'assets/images/profile.png',
   about: [
     '문제를 해결하고 시스템을 개선하는 과정에서 가장 큰 보람을 느낍니다.',
@@ -28,7 +28,7 @@ const PROJECTS = [
     summary: '육아용품 중고거래 서비스',
     team: '백엔드 3명, 프론트엔드 2명  (총 5명)',
     target: '고가의 육아용품 구매에 부담을 느끼는 부모 및 예비부모',
-    github: 'https://github.com/jung18/AjangAjang',
+    github: 'https://github.com/enghddd/AjangAjang',
     shots: ['ajangajang-screen-1.png', 'ajangajang-screen-2.png'],
     roles: [
       '전국 법정동 데이터베이스 구축',
@@ -67,7 +67,7 @@ const PROJECTS = [
     summary: '여행경비 관리 및 공유 서비스',
     team: '백엔드 3명, 프론트엔드 2명  (총 5명)',
     target: '여행 경비의 설정 및 관리에 어려움을 느끼는 사람들',
-    github: 'https://github.com/jung18/Triplet',
+    github: 'https://github.com/enghddd/Triplet',
     shots: ['triplet-screen-1.png', 'triplet-screen-2.png'],
     roles: [
       'Spring Security 인증, 인가 (JWT, OAuth2)',
@@ -104,7 +104,7 @@ const PROJECTS = [
     summary: '대전 여행 서비스',
     team: '백엔드 1명, 프론트엔드 1명  (총 2명)',
     target: '대전에 여행오는 여행객 및 대전에서 놀거리를 찾는 사람들',
-    github: 'https://github.com/jung18/daejeon-wassu',
+    github: 'https://github.com/enghddd/daejeon-wassu',
     shots: ['daejeon-wassu-screen-1.png', 'daejeon-wassu-screen-2.png'],
     roles: [
       '인프라 구축 (AWS, CI/CD, Docker)',
